@@ -26,7 +26,20 @@ int binarySearch(int arr[], int l, int r, int x)
     }  
     return -1;  
 }  
-
+void bubbleSort(int a[], int n)  
+{ 
+    for (int i = 0; i < n; i++)  
+    { 
+        for (int j = i + 1; j < n; j++)  
+        { 
+            if (a[i] > a[j]) { 
+                int temp = a[i]; 
+                a[i] = a[j]; 
+                a[j] = temp; 
+            } 
+        } 
+    } 
+} 
 int main()  
 {  
     int n,x;  
@@ -52,6 +65,11 @@ int main()
             result=search(arr, n, x); 
             break;
             case 2:
+             bubbleSort(arr, n); 
+            printf("Sorted Order: \n"); 
+            for (int i = 0; i < n; i++) {
+            
+            printf("%d\n", arr[i]); }
            result= binarySearch(arr, 0, n-1, x); 
             break;
             case 3:
